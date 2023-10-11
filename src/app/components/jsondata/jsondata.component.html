@@ -1,0 +1,15 @@
+<input type="text" class="form-control w-50"  [(ngModel)]="searchTerm" placeholder="search name">
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender </th>
+        <th>City</th>
+    </tr>
+    <tr *ngFor="let list of users | jsondatapipe:searchTerm">
+        <td>{{list.name}}</td>
+        <td>{{list.age}}</td>
+        <td>{{list.gender}}</td>
+        <td>{{list.city}}</td>
+    </tr>
+</table>

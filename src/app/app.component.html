@@ -1,40 +1,49 @@
-<div class="m-3">
-    <!---------- INBUILD PIPES ------------>
-    <div style="color: blueviolet;">Normal & slice pipe</div>
-    <!-- normal pipe & slice pipe -->
-    <div>{{title1 | lowercase | slice : 0:7}}</div>
-    <!-- currency pipe  -->
-    <div style="color: red;">currency pipe</div>
-    <h1>{{Amount | currency: 'INR'}}</h1>
-    <!-- decimal pipe  -->
-    <div style="color: lightseagreen;">decimal pipe</div>
-    <h3>{{Amount | number : '1.1-1'}}</h3>
-    <!-- date pipe -->
-    <div style="color: orange;">date pipe</div>
-    <h3>{{currentDate | date : 'dd/MMM/yyy'}}</h3>
-    <!-- percentage pipe -->
-    <div style="color: darkmagenta;">currency pipe</div>
-    <h2>{{percentagedata | percent}}</h2>
-    <!-- json pipe -->
-    <div style="color: darkcyan;">json pipe</div>
-    <h2>{{jsonObject | json}}</h2>
-    <!-- custompipe to filter data -->
-    <div style="color: rgb(255, 0, 217);">filter pipe</div>
-    <div>
-        <input type="text" class="form-control w-25" [(ngModel)]="filteredString">
-    </div>
-    <div *ngFor="let user of users | filterpipe : filteredString">
-        <h6>Name : {{user.name}}</h6>
-        <h6>Age : {{user.age}}</h6>
-        <h6>city : {{user.city}}</h6>
-    </div>
-    <!-- async pipe -->
-    <div style="color: limegreen;">async pipe</div>
-    <h5>{{appStatus | async}}</h5>
+<div class="row m-3">
+    <div class="col-6">
+        <!---------- INBUILD PIPES ------------>
+        <div style="color: blueviolet;">Normal & slice pipe</div>
+        <!-- normal pipe & slice pipe -->
+        <div>{{title1 | lowercase | slice : 0:7}}</div>
+        <!-- currency pipe  -->
+        <div style="color: red;">currency pipe</div>
+        <h1>{{Amount | currency: 'INR'}}</h1>
+        <!-- decimal pipe  -->
+        <div style="color: lightseagreen;">decimal pipe</div>
+        <h3>{{Amount | number : '1.1-1'}}</h3>
+        <!-- date pipe -->
+        <div style="color: orange;">date pipe</div>
+        <h3>{{currentDate | date : 'dd/MMM/yyy'}}</h3>
+        <!-- percentage pipe -->
+        <div style="color: darkmagenta;">currency pipe</div>
+        <h2>{{percentagedata | percent}}</h2>
+        <!-- json pipe -->
+        <div style="color: darkcyan;">json pipe</div>
+        <h2>{{jsonObject | json}}</h2>
+        <!-- custompipe to filter data -->
+        <div style="color: rgb(255, 0, 217);">filter pipe</div>
+        <div>
+            <input type="text" class="form-control w-25" [(ngModel)]="filteredString">
+        </div>
+        <div *ngFor="let user of users | filterpipe : filteredString">
+            <h6>Name : {{user.name}}</h6>
+            <h6>Age : {{user.age}}</h6>
+            <h6>city : {{user.city}}</h6>
+        </div>
+        <!-- async pipe -->
+        <div style="color: limegreen;">async pipe</div>
+        <h5>{{appStatus | async}}</h5>
 
-    <!-------------- CUSTOM PIPEs ------------->
-    <div style="color: blueviolet;">custom pipe</div>
-    <!-- <h1>{{Amount | custompipe : sdgrate}}</h1> -->
-    <h1>{{customdata.city | custompipe : customdata.city}}</h1>
-
+        <!-------------- CUSTOM PIPEs ------------->
+        <div style="color: blueviolet;">custom pipe</div>
+        <!-- <h1>{{Amount | custompipe : sdgrate}}</h1> -->
+        <h1>{{customdata.city | custompipe : customdata.city}}</h1>
+    </div>
+    <div class="col-6">
+        <div>
+            <app-mobilenum-formatpipe></app-mobilenum-formatpipe>
+        </div>
+        <div class="mt-3">
+            <app-jsondata></app-jsondata>
+        </div>
+    </div>
 </div>
