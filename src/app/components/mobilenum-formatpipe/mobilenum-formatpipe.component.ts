@@ -8,12 +8,5 @@ import { Component } from '@angular/core';
 export class MobilenumFormatpipeComponent {
   phoneNumber: string = '';
 
-  formatNumber() {
-    // Remove non-numeric characters
-    this.phoneNumber = this.phoneNumber.replace(/\D/g, '');
-    if (this.phoneNumber.length > 10) {
-      // this.phoneNumber = this.phoneNumber.slice(0, 10);
-      return
-    }
-  }
+ 
 }

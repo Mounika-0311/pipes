@@ -1,6 +1,6 @@
 <div>
     <label for="phoneNumber">Enter Numbers:</label>
-    <input type="text" class="form-control w-50" [(ngModel)]="phoneNumber" (input)="formatNumber()" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
+    <input type="text" class="form-control w-50" [(ngModel)]="phoneNumber" maxlength="10" placeholder="enter mobile number" oninput="this.value = this.value.replace(/[^0-9]/g, '');"/>
     <p *ngIf="phoneNumber.length > 0">
         Formatted Number: 
         <ng-container *ngIf="phoneNumber.length >= 1">({{ phoneNumber.slice(0, 3) }}</ng-container>
